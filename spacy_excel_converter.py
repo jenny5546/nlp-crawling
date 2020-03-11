@@ -2,7 +2,12 @@ import spacy
 import pandas as pd
 from pandas import ExcelWriter
 from pandas import ExcelFile
+from googletrans import Translator
 import numpy as np
+
+translator = Translator()
+hi = translator.translate('제1조(범죄의 성립과 처벌) ①범죄의 성립과 처벌은 행위 시의 법률에 의한다.', dest="en")
+print(hi.text)
 
 df = pd.read_excel(r'/Users/jaeeun/Desktop/file.xlsx')
 nlp = spacy.load("en_core_web_sm")
